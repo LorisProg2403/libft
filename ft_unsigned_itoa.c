@@ -34,6 +34,7 @@ char	*ft_unsigned_itoa(unsigned int n)
 	num = (char *)malloc(sizeof(char) * (len + 1));
 	if (!num)
 		return (0);
+	num[len] = '\0';
 	while (n)
 	{
 		num[len - 1] = n % 10 + '0';
