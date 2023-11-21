@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 15:48:01 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 16:42:11 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,10 @@ TO_DIR			=	$(SRC_PATH)ft_to/ft_tolower.c \
 UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c \
 					$(SRC_PATH)ft_utils/ft_free_ptrstr.c
 
-SRC 			=	$(ALLOC_DIR) $(ATOI_DIR) $(IS_DIR) $(LST_DIR) $(MEM_DIR) $(PRINTF_DIR) $(PUT_DIR) $(STR_DIR) $(TO_DIR) $(UTILS_DIR)
+GNL_DIR			=	$(SRC_PATH)GNL/get_next_line.c \
+					$(SRC_PATH)GNL/get_next_line_utils.c
+
+SRC 			=	$(ALLOC_DIR) $(ATOI_DIR) $(IS_DIR) $(LST_DIR) $(MEM_DIR) $(PRINTF_DIR) $(PUT_DIR) $(STR_DIR) $(TO_DIR) $(UTILS_DIR) $(GNL_DIR)
 
 OBJ				= 	$(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRC))
 
