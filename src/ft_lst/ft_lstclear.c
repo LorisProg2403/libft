@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:02:32 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/17 14:02:34 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 12:27:56 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

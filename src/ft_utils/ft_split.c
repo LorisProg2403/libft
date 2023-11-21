@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42lausanne.ch>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:07:07 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/11 12:07:10 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 12:27:56 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static int	count_words(char *str, char c)
 {

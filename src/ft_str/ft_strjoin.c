@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <marvin@42lausanne.ch>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:07:18 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/11 11:07:26 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 12:27:56 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 19:45:47 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/12 19:45:48 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 12:27:56 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

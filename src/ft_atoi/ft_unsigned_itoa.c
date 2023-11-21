@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unsigned_itoa.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:26:07 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/27 01:26:09 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 12:27:56 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static int	ft_num_len(unsigned	int num)
 {
