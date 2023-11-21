@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -60,6 +61,14 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 
 // FT_PRINTF
+int			ft_printf(const char *str, ...);
+int			ft_print_char(char c);
+int			ft_print_str(char *str);
+int			ft_print_nbr(int n);
+int			ft_print_unsigned(unsigned int n);
+int			ft_print_hex(unsigned int num, const char format);
+int			ft_print_ptr(unsigned long long ptr);
+int			ft_print_stderr(char *s, const char c);
 
 // FT_PUT
 void		ft_putchar_fd(char c, int fd);

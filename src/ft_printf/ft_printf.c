@@ -3,58 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 22:58:23 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/28 22:58:25 by lgaume           ###   ########.fr       */
+/*   Created: 2023/11/01 11:45:00 by lgaume            #+#    #+#             */
+/*   Updated: 2023/11/21 13:29:46 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../include/libft.h"
 
-static int	ft_format(va_list args, const char format)
+static int	ft_search(va_list args, const char c)
 {
 	int	print_len;
 
 	print_len = 0;
-	if (format == 'c')
+	if (c == 'c')
 		print_len += ft_print_char(va_arg(args, int));
-	if (format == 's')
+	else if (c == 's')
 		print_len += ft_print_str(va_arg(args, char *));
-	if (format == 'p')
+	else if (c == 'p')
 		print_len += ft_print_ptr(va_arg(args, unsigned long long));
-	if (format == 'd' || format == 'i')
+	else if (c == 'd' || c == 'i')
 		print_len += ft_print_nbr(va_arg(args, int));
-	if (format == 'u')
+	else if (c == 'u')
 		print_len += ft_print_unsigned(va_arg(args, unsigned int));
-	if (format == 'x' || format == 'X')
-		print_len += ft_print_hex(va_arg(args, int), format);
-	if (format == '%')
+	else if (c == 'x' || c == 'X')
+		print_len += ft_print_hex(va_arg(args, unsigned int), c);
+	else if (c == '%')
 		print_len += ft_print_char('%');
+	else if (c == 'e')
+		print_len += ft_print_stderr(va_arg(args, char *), c);
 	return (print_len);
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(const char *str, ...)
 {
 	int		i;
-	int		print_length;
+	int		len;
 	va_list	args;
 
-	va_start(args, format);
-	i = 0;
-	print_length = 0;
-	while (format[i])
+	i = -1;
+	len = 0;
+	va_start(args, str);
+	while (str[++i])
 	{
-		if (format[i] == '%')
+		if (str[i] == '%')
 		{
-			print_length += ft_format(args, format[i + 1]);
-			if (format[i + 1] != '%')
-				va_arg(args, void *);
+			len += ft_search(args, str[i + 1]);
+			if (len == -1)
+				return (-1);
 			i++;
 		}
 		else
-			print_length += ft_print_char(format[i]);
-		i++;
+		{
+			len += ft_print_char(str[i]);
+			if (len == -1)
+				return (-1);
+		}
 	}
-	return (print_length);
+	va_end(args);
+	return (len);
 }

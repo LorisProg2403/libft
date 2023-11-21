@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 00:13:06 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/29 00:13:08 by lgaume           ###   ########.fr       */
+/*   Created: 2023/11/01 11:45:08 by lgaume            #+#    #+#             */
+/*   Updated: 2023/11/21 13:08:19 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../include/libft.h"
 
-int	ft_putstr(char *str)
+int	ft_print_nbr(int n)
 {
-	int	i;
+	int		len;
+	char	*num;
 
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+	len = 0;
+	num = ft_itoa(n);
+	len = ft_print_str(num);
+	free(num);
+	return (len);
 }

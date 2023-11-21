@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 00:16:37 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/29 00:16:41 by lgaume           ###   ########.fr       */
+/*   Created: 2023/11/01 11:44:13 by lgaume            #+#    #+#             */
+/*   Updated: 2023/11/21 13:08:19 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../include/libft.h"
 
-int	ft_print_str(char *str)
+int	ft_print_char(char c)
 {
-	int	len;
-
-	len = 0;
-	if (!str)
-		return (ft_putstr("(null)"));
-	while (str[len])
-		len += ft_print_char(str[len]);
-	return (len);
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	return (1);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 00:22:33 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/29 00:22:35 by lgaume           ###   ########.fr       */
+/*   Created: 2023/11/01 11:44:21 by lgaume            #+#    #+#             */
+/*   Updated: 2023/11/21 13:08:19 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../include/libft.h"
 
 static int	ft_hex_len(unsigned int num)
 {
@@ -25,14 +25,12 @@ static int	ft_hex_len(unsigned int num)
 	return (len);
 }
 
-int	ft_print_hex(unsigned int num, const char format)
+static void	ft_int_to_hex(unsigned int num, const char format)
 {
-	if (!num)
-		return (ft_print_char('0'));
 	if (num >= 16)
 	{
-		ft_print_hex(num / 16, format);
-		ft_print_hex(num % 16, format);
+		ft_int_to_hex(num / 16, format);
+		ft_int_to_hex(num % 16, format);
 	}
 	else
 	{
@@ -41,10 +39,21 @@ int	ft_print_hex(unsigned int num, const char format)
 		else
 		{
 			if (format == 'x')
-				ft_print_char(num - 10 + 'a');
+				ft_putchar_fd((num - 10 + 'a'), 1);
 			if (format == 'X')
-				ft_print_char(num - 10 + 'A');
+				ft_putchar_fd((num - 10 + 'A'), 1);
 		}
 	}
+}
+
+int	ft_print_hex(unsigned int num, const char format)
+{
+	if (!num)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	else
+		ft_int_to_hex(num, format);
 	return (ft_hex_len(num));
 }

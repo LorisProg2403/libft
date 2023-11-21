@@ -3,21 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
+#    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 11:07:01 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 13:34:43 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 			= 	gcc
 NAME 		= 	libft.a
-INC			=	/include
-FLAGS 		= 	-Wall -Wextra -Werror
+INCS			=	include/
+FLAGS 		= 	-Wall -Wextra -Werror -I
+RM			=	rm -f
+AR			=	ar rcs
 
 SRC_PATH	=	src/
 OBJ_PATH	=	obj/
-INCS		=	-I ./include/
 
 
 ALLOC_DIR		=	$(SRC_PATH)ft_alloc/ft_bzero.c \
@@ -50,7 +51,14 @@ MEM_DIR			=	$(SRC_PATH)ft_mem/ft_memchr.c \
 					$(SRC_PATH)ft_mem/ft_memmove.c \
 					$(SRC_PATH)ft_mem/ft_memset.c
 
-PRINTF_DIR		=
+PRINTF_DIR		=	$(SRC_PATH)ft_printf/ft_print_char.c \
+					$(SRC_PATH)ft_printf/ft_print_hex.c \
+					$(SRC_PATH)ft_printf/ft_print_ptr.c \
+					$(SRC_PATH)ft_printf/ft_print_unsigned.c \
+					$(SRC_PATH)ft_printf/ft_printf.c \
+					$(SRC_PATH)ft_printf/ft_printnbr.c \
+					$(SRC_PATH)ft_printf/ft_printstr.c \
+					$(SRC_PATH)ft_printf/ft_print_stderr.c
 
 PUT_DIR			=	$(SRC_PATH)ft_put/ft_putchar_fd.c \
 					$(SRC_PATH)ft_put/ft_putendl_fd.c \
@@ -80,26 +88,24 @@ UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c
 
 SRC 			=	$(ALLOC_DIR) $(ATOI_DIR) $(IS_DIR) $(LST_DIR) $(MEM_DIR) $(PRINTF_DIR) $(PUT_DIR) $(STR_DIR) $(TO_DIR) $(UTILS_DIR)
 
-OBJS 			= 	$(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRC))
+OBJ				= 	$(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRC))
 
 all: 			$(NAME)
 
-$(NAME): 		$(OBJS)
-				ar rc $(NAME) $(OBJS)
-				ranlib $(NAME)
+$(NAME): 		$(OBJ)
+				@$(AR) $(NAME) $(OBJ)
 
-## NEED CHANGE
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+$(OBJ_PATH)%.o:	$(SRC_PATH)%.c
 				@mkdir -p $(@D)
-				$(CC) $(FLAGS) -c $< -o $@ $(INCS)
-
+				@$(CC) $(FLAGS) $(INCS) -c $< -o $@
 
 clean:
-				rm -f $(OBJS)
+				@$(RM) -r $(OBJ_PATH)
+				@$(RM) .cache_exists
 
 fclean: 		clean
-				rm -f $(NAME)
+				@$(RM) $(NAME)
 
-re:				fclean all
+re: 			fclean all
 
-.PHONY: 		all clean fclean re bonus
+.PHONY: 		all clean fclean re

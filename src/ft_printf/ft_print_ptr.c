@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 00:22:43 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/29 00:22:44 by lgaume           ###   ########.fr       */
+/*   Created: 2023/11/01 11:44:29 by lgaume            #+#    #+#             */
+/*   Updated: 2023/11/21 13:08:19 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/ft_printf.h"
+#include "../include/libft.h"
 
 static int	ft_ptrlen(uintptr_t ptr)
 {
@@ -35,21 +35,21 @@ static void	ft_putptr(uintptr_t ptr)
 	else
 	{
 		if (ptr <= 9)
-			ft_print_char(ptr + '0');
+			ft_putchar_fd((ptr + '0'), 1);
 		else
-			ft_print_char(ptr + 'a' - 10);
+			ft_putchar_fd((ptr - 10 + 'a'), 1);
 	}
 }
 
 int	ft_print_ptr(unsigned long long ptr)
 {
-	int	len;
+	int	ptr_len;
 
-	len = 0;
-	len += ft_print_str("0x");
+	ptr_len = 0;
+	ptr_len += ft_print_str("0x");
 	if (!ptr)
-		len += ft_print_char('0');
+		ptr_len += ft_print_char('0');
 	else
 		ft_putptr(ptr);
-	return (len + ft_ptrlen(ptr));
+	return (ptr_len + ft_ptrlen(ptr));
 }
