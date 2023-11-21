@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_stderr.c                                  :+:      :+:    :+:   */
+/*   ft_issign.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:30:08 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 15:07:23 by lgaume           ###   ########.fr       */
+/*   Created: 2023/11/21 15:04:33 by lgaume            #+#    #+#             */
+/*   Updated: 2023/11/21 15:06:17 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
-int	ft_print_stderr(char *s)
+int	is_sign(char c)
 {
-	if (!s)
-	{
-		if (write(1, "(null)", 6) == -1)
-			return (-1);
-		return (6);
-	}
-	ft_putstr_fd(s, 2);
-	return (ft_strlen(s));
+	return (c == '+' || c == '-');
 }

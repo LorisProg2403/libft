@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 13:34:43 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 15:05:31 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ IS_DIR			=	$(SRC_PATH)ft_is/ft_isalnum.c \
 					$(SRC_PATH)ft_is/ft_isascii.c \
 					$(SRC_PATH)ft_is/ft_isdigit.c \
 					$(SRC_PATH)ft_is/ft_isprint.c \
-					$(SRC_PATH)ft_is/ft_isspace.c
+					$(SRC_PATH)ft_is/ft_isspace.c \
+					$(SRC_PATH)ft_is/ft_issign.c 
 
 LST_DIR			=	$(SRC_PATH)ft_lst/ft_lstadd_back.c \
 					$(SRC_PATH)ft_lst/ft_lstadd_front.c \
