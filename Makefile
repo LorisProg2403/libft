@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 10:58:05 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 11:07:01 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ INC			=	/include
 FLAGS 		= 	-Wall -Wextra -Werror
 
 SRC_PATH	=	src/
+OBJ_PATH	=	obj/
+INCS		=	-I ./include/
 
 
 ALLOC_DIR		=	$(SRC_PATH)ft_alloc/ft_bzero.c \
@@ -76,35 +78,28 @@ TO_DIR			=	$(SRC_PATH)ft_to/ft_tolower.c \
 
 UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c
 
-SRC 			=
+SRC 			=	$(ALLOC_DIR) $(ATOI_DIR) $(IS_DIR) $(LST_DIR) $(MEM_DIR) $(PRINTF_DIR) $(PUT_DIR) $(STR_DIR) $(TO_DIR) $(UTILS_DIR)
 
-OBJ = $(SRC:.c=.o)
+OBJS 			= 	$(patsubst $(SRC_PATH)%.c,$(OBJ_PATH)%.o,$(SRC))
 
-BONUS			= 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-					ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-					ft_lstmap.c \
+all: 			$(NAME)
 
-BONUS_OBJ = $(BONUS:.c=.o)
-
-all: $(NAME)
-
-$(NAME): 	$(OBJ)
-				ar rc $(NAME) $(OBJ)
+$(NAME): 		$(OBJS)
+				ar rc $(NAME) $(OBJS)
 				ranlib $(NAME)
 
-$(OBJ):
-				$(CC) $(FLAGS) -c $(SRC)
+## NEED CHANGE
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+				@mkdir -p $(@D)
+				$(CC) $(FLAGS) -c $< -o $@ $(INCS)
 
-bonus:		$(BONUS_OBJ)
-				ar rc $(NAME) $(BONUS_OBJ)
-				ranlib $(NAME)
 
 clean:
-				rm -f $(OBJ) $(BONUS_OBJ)
+				rm -f $(OBJS)
 
-fclean: 	clean
+fclean: 		clean
 				rm -f $(NAME)
 
-re:			fclean all
+re:				fclean all
 
-.PHONY: 	all clean fclean re bonus
+.PHONY: 		all clean fclean re bonus
