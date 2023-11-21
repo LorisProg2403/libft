@@ -93,6 +93,7 @@ char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strnew(size_t size);
+int			ft_strcmp(char *s1, char *s2);
 
 // FT_TO
 int			ft_toupper(int c);

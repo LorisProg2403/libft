@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 15:40:10 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 15:48:01 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,8 @@ STR_DIR			=	$(SRC_PATH)ft_str/ft_strchr.c \
 					$(SRC_PATH)ft_str/ft_strnstr.c \
 					$(SRC_PATH)ft_str/ft_strrchr.c \
 					$(SRC_PATH)ft_str/ft_strtrim.c \
-					$(SRC_PATH)ft_str/ft_substr.c
+					$(SRC_PATH)ft_str/ft_substr.c \
+					$(SRC_PATH)ft_str/ft_strcmp.c
 
 TO_DIR			=	$(SRC_PATH)ft_to/ft_tolower.c \
 					$(SRC_PATH)ft_to/ft_toupper.c
