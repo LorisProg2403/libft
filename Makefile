@@ -3,30 +3,80 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lgaume <marvin@42lausanne.ch>              +#+  +:+       +#+         #
+#    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/10/10 10:09:28 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 10:58:05 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC 			= 	gcc
+NAME 		= 	libft.a
+INC			=	/include
+FLAGS 		= 	-Wall -Wextra -Werror
 
-NAME = libft.a
+SRC_PATH	=	src/
 
-HEADER = libft.h
 
-FLAGS = -Wall -Wextra -Werror
+ALLOC_DIR		=	$(SRC_PATH)ft_alloc/ft_bzero.c \
+					$(SRC_PATH)ft_alloc/ft_calloc.c
 
-SRC				=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
-					ft_strlcat.c ft_strncmp.c ft_substr.c ft_atoi.c ft_isalpha.c \
-					ft_itoa.c ft_memcpy.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c \
-					ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_strnew.c \
-					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
-					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_isspace.c \
-					ft_striteri.c ft_strncat.c \
-					ft_unsigned_itoa.c \
+ATOI_DIR		=	$(SRC_PATH)ft_atoi/ft_atoi.c \
+					$(SRC_PATH)ft_atoi/ft_itoa.c \
+					$(SRC_PATH)ft_atoi/ft_unsigned_itoa.c
+
+IS_DIR			=	$(SRC_PATH)ft_is/ft_isalnum.c \
+					$(SRC_PATH)ft_is/ft_isalpha.c \
+					$(SRC_PATH)ft_is/ft_isascii.c \
+					$(SRC_PATH)ft_is/ft_isdigit.c \
+					$(SRC_PATH)ft_is/ft_isprint.c \
+					$(SRC_PATH)ft_is/ft_isspace.c
+
+LST_DIR			=	$(SRC_PATH)ft_lst/ft_lstadd_back.c \
+					$(SRC_PATH)ft_lst/ft_lstadd_front.c \
+					$(SRC_PATH)ft_lst/ft_lstclear.c \
+					$(SRC_PATH)ft_lst/ft_lstdelone.c \
+					$(SRC_PATH)ft_lst/ft_lstiter.c \
+					$(SRC_PATH)ft_lst/ft_lstlast.c \
+					$(SRC_PATH)ft_lst/ft_lstmap.c \
+					$(SRC_PATH)ft_lst/ft_lstnew.c \
+					$(SRC_PATH)ft_lst/ft_lstsize.c
+
+MEM_DIR			=	$(SRC_PATH)ft_mem/ft_memchr.c \
+					$(SRC_PATH)ft_mem/ft_memcmp.c \
+					$(SRC_PATH)ft_mem/ft_memcpy.c \
+					$(SRC_PATH)ft_mem/ft_memmove.c \
+					$(SRC_PATH)ft_mem/ft_memset.c
+
+PRINTF_DIR		=
+
+PUT_DIR			=	$(SRC_PATH)ft_put/ft_putchar_fd.c \
+					$(SRC_PATH)ft_put/ft_putendl_fd.c \
+					$(SRC_PATH)ft_put/ft_putnbr_fd.c \
+					$(SRC_PATH)ft_put/ft_putstr_fd.c
+
+STR_DIR			=	$(SRC_PATH)ft_str/ft_strchr.c \
+					$(SRC_PATH)ft_str/ft_strdup.c \
+					$(SRC_PATH)ft_str/ft_striteri.c \
+					$(SRC_PATH)ft_str/ft_strjoin.c \
+					$(SRC_PATH)ft_str/ft_strlcat.c \
+					$(SRC_PATH)ft_str/ft_strlcpy.c \
+					$(SRC_PATH)ft_str/ft_strlen.c \
+					$(SRC_PATH)ft_str/ft_strmapi.c \
+					$(SRC_PATH)ft_str/ft_strncat.c \
+					$(SRC_PATH)ft_str/ft_strncmp.c \
+					$(SRC_PATH)ft_str/ft_strnew.c \
+					$(SRC_PATH)ft_str/ft_strnstr.c \
+					$(SRC_PATH)ft_str/ft_strrchr.c \
+					$(SRC_PATH)ft_str/ft_strtrim.c \
+					$(SRC_PATH)ft_str/ft_substr.c
+
+TO_DIR			=	$(SRC_PATH)ft_to/ft_tolower.c \
+					$(SRC_PATH)ft_to/ft_toupper.c
+
+UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c
+
+SRC 			=
 
 OBJ = $(SRC:.c=.o)
 
