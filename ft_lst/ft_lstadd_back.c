@@ -6,13 +6,13 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:39:47 by lgaume            #+#    #+#             */
-/*   Updated: 2023/10/16 10:39:52 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 10:39:26 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *n)
 {
 	t_list	*last;
 
@@ -21,9 +21,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		if (*lst)
 		{
 			last = ft_lstlast(*lst);
-			last->next = new;
+			last->next = n;
 		}
 		else
-			*lst = new;
+			*lst = n;
 	}
 }
