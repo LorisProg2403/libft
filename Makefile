@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/21 15:05:31 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/21 15:40:10 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,8 @@ STR_DIR			=	$(SRC_PATH)ft_str/ft_strchr.c \
 TO_DIR			=	$(SRC_PATH)ft_to/ft_tolower.c \
 					$(SRC_PATH)ft_to/ft_toupper.c
 
-UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c
+UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c \
+					$(SRC_PATH)ft_utils/ft_free_ptrstr.c
 
 SRC 			=	$(ALLOC_DIR) $(ATOI_DIR) $(IS_DIR) $(LST_DIR) $(MEM_DIR) $(PRINTF_DIR) $(PUT_DIR) $(STR_DIR) $(TO_DIR) $(UTILS_DIR)
 

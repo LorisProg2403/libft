@@ -100,6 +100,7 @@ int			ft_tolower(int c);
 
 // FT_UTILS
 char		**ft_split(const char *s, char c);
+void		ft_free_ptrstr(char **s);
 
 //GNL
 char		*get_next_line(int fd);
