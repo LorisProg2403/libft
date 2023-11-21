@@ -6,13 +6,13 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:30:08 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 13:33:18 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:42:18 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-int ft_print_stderr(char *s, const char c)
+int ft_print_stderr(char *s)
 {
     if (!s)
     {

@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:45:00 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 13:29:46 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/21 13:42:46 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_search(va_list args, const char c)
 	else if (c == '%')
 		print_len += ft_print_char('%');
 	else if (c == 'e')
-		print_len += ft_print_stderr(va_arg(args, char *), c);
+		print_len += ft_print_stderr(va_arg(args, char *));
 	return (print_len);
 }
 

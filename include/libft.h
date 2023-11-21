@@ -68,7 +68,7 @@ int			ft_print_nbr(int n);
 int			ft_print_unsigned(unsigned int n);
 int			ft_print_hex(unsigned int num, const char format);
 int			ft_print_ptr(unsigned long long ptr);
-int			ft_print_stderr(char *s, const char c);
+int			ft_print_stderr(char *s);
 
 // FT_PUT
 void		ft_putchar_fd(char c, int fd);
