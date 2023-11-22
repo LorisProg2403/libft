@@ -19,6 +19,10 @@
 # include <limits.h>
 # include <stdarg.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 15
+# endif
+
 typedef struct s_list
 {
 	void			*content;
@@ -102,6 +106,7 @@ int			ft_tolower(int c);
 // FT_UTILS
 char		**ft_split(const char *s, char c);
 void		ft_free_ptrstr(char **s);
+void		handle_errors(char *error_msg);
 
 //GNL
 char		*get_next_line(int fd);
