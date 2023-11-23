@@ -1,5 +1,12 @@
 ROOT=..
 
+NOK=0
+NT=0
+
+CHECK="OK"
+CHECKIS="OK"
+CHECKSTR="OK"
+
 ISPRINT=tests-files/is/print
 PRINT=print
 ISDIGIT=tests-files/is/digit
@@ -92,17 +99,41 @@ tests() {
 		if [[ ! -s x ]]
 		then
 			printf "${RED}[LEAKS] ${NOCOLOR}"
+			CHECK="KO"
 		elif [[ $(cat stdout) = "OK" ]]
 		then
 			printf "${GREEN}[OK] ${NOCOLOR}"
+			((NOK++))
 		else
 			printf "${RED}[KO] ${NOCOLOR}"
+			CHECK="KO"
 		fi
 		rm -rf  stdout a b x y
+		((NT++))
 	done
 	make fclean -C $DIR
 }
 
+isok() {
+	txt=$1
+	c=$2
+	if [[ $c = "OK" ]]
+	then
+		printf "${GREEN}\xE2\x9C\x94 $txt ${NOCOLOR}"
+	else
+		printf "${RED}\xE2\x9D\x8C $txt ${NOCOLOR}"
+	fi
+}
+
+endtest() {
+	local n=$(printf "%.0f" "$(echo "scale=2; ($NOK / $NT) * 100" | bc)")
+	if [[ $n -gt 49 ]]
+	then
+		printf "\n${GREEN}$n / 100 ${NOCOLOR}\n"
+	else
+		printf "\n${RED}$n / 100 ${NOCOLOR}\n"
+	fi
+}
 #FT_IS
 printf "${PURPLE}FT_IS : ${NOCOLOR}\n\n"
 
@@ -126,13 +157,33 @@ tests $ISSIGN $SIGN 3
 printf "\n"
 printf "FT_ISSPACE : "
 tests $ISSPACE $SPACE 7
-printf "\n"
+printf "\n\n\n"
+if [[ $CHECK = "OK" ]]
+then
+	CHECKIS="OK"
+else
+	CHECKIS="KO"
+fi
+CHECK="OK"
 
 #FT_STR
 printf "${PURPLE}FT_STR : ${NOCOLOR}\n\n"
 
 printf "FT_STRCHR : "
 tests $STRCHR $CHR 3
+printf "\n\n\n"
+if [[ $CHECK = "OK" ]]
+then
+	CHECKSTR="OK"
+else
+	CHECKSTR="KO"
+fi
+CHECK="OK"
+
+isok "FT_IS" $CHECKIS
+isok "FT_STR" $CHECKSTR
 printf "\n"
+
+endtest
 
 make fclean -C $ROOT
