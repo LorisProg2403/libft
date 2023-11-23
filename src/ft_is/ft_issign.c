@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_issign.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:04:33 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 15:06:17 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/23 16:21:12 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-int	is_sign(char c)
+int	ft_issign(char c)
 {
 	return (c == '+' || c == '-');
 }

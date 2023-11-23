@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_stderr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:30:08 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 15:07:23 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/23 15:33:57 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/libft.h"
 
 int	ft_print_stderr(char *s)
 {
