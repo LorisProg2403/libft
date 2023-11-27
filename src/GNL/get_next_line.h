@@ -6,35 +6,25 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 03:36:57 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/27 18:25:59 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/27 21:33:40 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include "stdlib.h"
-# include "unistd.h"
+# include <stdlib.h>
+# include <unistd.h>
+
+# define MAX_FD 1024
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 42
 # endif
 
-typedef struct s_list
-{
-	char			*content;
-	struct s_list	*next;
-}					t_list;
-
-char		*get_next_line(int fd);
-void		read_and_stash(int fd, t_list **stash);
-void		add_to_stash(t_list **stash, char *buff, int readed);
-t_list		*lst_get_last(t_list *lst);
-int			found_newline(t_list *stash);
-void		extract_line(t_list *stash, char **line);
-void		generate_line(char **line, t_list *stash);
-void		clean_stash(t_list **stash);
-int			f_strlen(const char *s);
-void		free_stash(t_list *stash);
+char	*process_line(char **stash);
+char	*read_from_fd(int fd);
+char	*get_next_line_helper(char **stash, int fd);
+char	*get_next_line_bonus(int fd);
 
 #endif
