@@ -6,24 +6,22 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:18:45 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/27 21:46:49 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/27 21:49:53 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	*ft_realloc(void *ptr, size_t newsize)
+void		*ft_realloc(void *ptr, size_t size)
 {
-	char	*newptr;
-	size_t	cursize;
+	void	*new_ptr;
 
-	if (ptr == 0)
-		return (malloc(newsize));
-	cursize = sizeof(ptr);
-	if (newsize <= cursize)
+	if (ptr == NULL)
+		return (malloc(size));
+	if (!size)
 		return (ptr);
-	newptr = malloc(newsize);
-	ft_memcpy(ptr, newptr, cursize);
+	new_ptr = malloc(size);
+	ft_memcpy(new_ptr, ptr, size);
 	free(ptr);
-	return (newptr);
+	return (new_ptr);
 }
