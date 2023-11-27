@@ -33,7 +33,7 @@ typedef struct s_list
 void		ft_bzero(void *str, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 int			ft_malloc_usable_size(void *ptr);
-void		*ft_realloc(void *ptr, int new_size);
+void		*ft_realloc(void *ptr, size_t newsize);
 
 // FT_ATOI
 int			ft_atoi(const char *str);

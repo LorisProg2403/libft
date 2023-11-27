@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/27 21:34:46 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/27 21:46:32 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,6 @@ UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c \
 					$(SRC_PATH)ft_utils/handle_errors.c
 
 GNL_DIR			=	$(SRC_PATH)GNL/get_next_line.c \
-					#$(SRC_PATH)GNL/get_next_line_utils.c
 
 SRC 			=	$(ALLOC_DIR) $(ATOI_DIR) $(IS_DIR) $(LST_DIR) $(MEM_DIR) $(PRINTF_DIR) $(PUT_DIR) $(STR_DIR) $(TO_DIR) $(UTILS_DIR) $(GNL_DIR)
 
