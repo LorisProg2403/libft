@@ -32,6 +32,8 @@ typedef struct s_list
 // FT_ALLOC
 void		ft_bzero(void *str, size_t n);
 void		*ft_calloc(size_t count, size_t size);
+int			ft_malloc_usable_size(void *ptr);
+void		*ft_realloc(void *ptr, int new_size);
 
 // FT_ATOI
 int			ft_atoi(const char *str);

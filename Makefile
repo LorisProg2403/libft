@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+         #
+#    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/22 10:11:15 by lgaume           ###   ########.fr        #
+#    Updated: 2023/11/27 19:32:48 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ OBJ_PATH	=	obj/
 
 
 ALLOC_DIR		=	$(SRC_PATH)ft_alloc/ft_bzero.c \
-					$(SRC_PATH)ft_alloc/ft_calloc.c
+					$(SRC_PATH)ft_alloc/ft_calloc.c \
+					$(SRC_PATH)ft_alloc/ft_realloc.c \
+					$(SRC_PATH)ft_alloc/ft_malloc_usable_size.c
+
 
 ATOI_DIR		=	$(SRC_PATH)ft_atoi/ft_atoi.c \
 					$(SRC_PATH)ft_atoi/ft_itoa.c \
@@ -34,7 +37,7 @@ IS_DIR			=	$(SRC_PATH)ft_is/ft_isalnum.c \
 					$(SRC_PATH)ft_is/ft_isdigit.c \
 					$(SRC_PATH)ft_is/ft_isprint.c \
 					$(SRC_PATH)ft_is/ft_isspace.c \
-					$(SRC_PATH)ft_is/ft_issign.c 
+					$(SRC_PATH)ft_is/ft_issign.c
 
 LST_DIR			=	$(SRC_PATH)ft_lst/ft_lstadd_back.c \
 					$(SRC_PATH)ft_lst/ft_lstadd_front.c \
