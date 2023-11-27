@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgaume <lgaume@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 03:36:57 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/01 04:27:22 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:25:59 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int			found_newline(t_list *stash);
 void		extract_line(t_list *stash, char **line);
 void		generate_line(char **line, t_list *stash);
 void		clean_stash(t_list **stash);
-int			ft_strlen(char *s);
+int			f_strlen(const char *s);
 void		free_stash(t_list *stash);
 
 #endif

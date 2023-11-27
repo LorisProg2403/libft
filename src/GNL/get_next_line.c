@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 03:37:13 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 10:35:47 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:29:06 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ void	clean_stash(t_list **stash)
 		i++;
 	if (last->content && last->content[i] == '\n')
 		i++;
-	clean->content = malloc(sizeof(char) * (ft_strlen(last->content) - 1 + 1));
+	clean->content = malloc(sizeof(char) * (f_strlen(last->content) - 1 + 1));
 	if (!clean->content)
 		return ;
 	j = 0;

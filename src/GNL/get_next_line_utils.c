@@ -6,7 +6,7 @@
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 03:37:22 by lgaume            #+#    #+#             */
-/*   Updated: 2023/11/21 10:35:51 by lgaume           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:26:56 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ void	generate_line(char **line, t_list *stash)
 	*line = (char *)malloc(sizeof(char) * (len + 1));
 }
 
-int	ft_strlen(char *s)
+int	f_strlen(const char *s)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
 void	free_stash(t_list *stash)
