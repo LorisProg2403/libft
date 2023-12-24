@@ -19,6 +19,8 @@
 # include <limits.h>
 # include <stdarg.h>
 
+# include "colors.h"
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 15
 # endif
@@ -109,6 +111,7 @@ int			ft_tolower(int c);
 char		**ft_split(const char *s, char c);
 void		ft_free_ptrstr(char **s);
 void		handle_errors(char *error_msg);
+void		set_zero(int count, ...);
 
 //GNL
 char		*get_next_line(int fd);

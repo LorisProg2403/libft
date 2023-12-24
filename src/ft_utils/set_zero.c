@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   set_zero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 19:18:45 by lgaume            #+#    #+#             */
-/*   Updated: 2023/12/24 12:38:05 by lgaume           ###   ########.fr       */
+/*   Created: 2023/12/24 12:36:40 by lgaume            #+#    #+#             */
+/*   Updated: 2023/12/24 12:37:05 by lgaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	*ft_realloc(void *ptr, size_t size)
+void	set_zero(int count, ...)
 {
-	void	*new_ptr;
+	va_list	args;
+	int		*curr;
+	int		i;
 
-	if (ptr == NULL)
-		return (malloc(size));
-	if (!size)
-		return (ptr);
-	new_ptr = malloc(size);
-	ft_memcpy(new_ptr, ptr, size);
-	free(ptr);
-	return (new_ptr);
+	i = 0;
+	va_start(args, count);
+	while (i < count)
+	{
+		curr = va_arg(args, int *);
+		*curr = 0;
+		i++;
+	}
+	va_end(args);
 }

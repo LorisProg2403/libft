@@ -6,7 +6,7 @@
 #    By: lgaume <lgaume@student.42lausanne.ch>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 10:09:28 by lgaume            #+#    #+#              #
-#    Updated: 2023/11/27 21:46:32 by lgaume           ###   ########.fr        #
+#    Updated: 2023/12/24 12:37:36 by lgaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,8 @@ TO_DIR			=	$(SRC_PATH)ft_to/ft_tolower.c \
 
 UTILS_DIR		=	$(SRC_PATH)ft_utils/ft_split.c \
 					$(SRC_PATH)ft_utils/ft_free_ptrstr.c \
-					$(SRC_PATH)ft_utils/handle_errors.c
+					$(SRC_PATH)ft_utils/handle_errors.c \
+					$(SRC_PATH)ft_utils/set_zero.c
 
 GNL_DIR			=	$(SRC_PATH)GNL/get_next_line.c \
 
